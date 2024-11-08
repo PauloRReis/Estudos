@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue - Aula 02 - Renderização Declarativa</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>🌍 {{message}} </h1>
+        <!-- v-bind diretiva de Vue usada para ligar uma propriedade HTML a uma expressão dinâmica. -->
+        <!-- v-bind:[parametro] = "[vue data]"-->
+        <!-- v-bind:tittle associa o valor message ao atributo do html tittle-->
+        <p v-bind:title="message">Mensagem escrita por {{nome}}</p>
+        <input type="text" v-model="nome"/>
+    </div>
+</body>
+</html>
+
+<script>
+    app = new Vue({
+        el: "#app",
+        data: {
+            message: "Olá Mundo!",
+            nome: "Paulo"
+        }
+    })
+</script>
