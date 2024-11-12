@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue - Aula 04 - Interação com o usuario</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="toggleVisibility">Mostrar/Ocultar</button> | <button @dblclick="reverseMessage">Inverter mensagem</button>
+        <p v-if="isVisible">{{message}}</p>
+        <br>
+    <input type="text" name="message" id="message" v-model="message" placeholder="message" />
+    </div>
+</body>
+</html>
+
+<script>
+    app = new Vue({
+        el:"#app",
+        data: {
+            isVisible: true,
+            message: "Oi vue"
+        },
+        methods: {
+            toggleVisibility(){
+                this.isVisible = !this.isVisible;
+            },
+            reverseMessage(){
+                this.message = this.message.split('').reverse().join('');
+            }
+        }
+    })
+</script>
