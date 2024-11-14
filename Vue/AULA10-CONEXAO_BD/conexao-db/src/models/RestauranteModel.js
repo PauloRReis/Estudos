@@ -5,7 +5,7 @@ export default class RestauranteModel{
     static async getRestauranteById(id) {
         try {
             const docRef = doc(db, "restaurantes", id);
-            const docSnap = await getDoc(docRef);
+            const docSnap = await getDocs(docRef);
       
             if (docSnap.exists()) {
               return docSnap.data();
